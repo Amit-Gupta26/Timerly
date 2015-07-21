@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Timerly</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="title_timers_screen">My Timers</string>
+    <string name="title_create_timer_screen">Create Timer</string>
+
+    <string name="empty_timers_feedback">There are no timers.</string>
+
+    <string name="new_timer_title">Title</string>
+    <string name="new_timer_amount_of_circuits">Laps</string>
+    <string name="new_timer_routine_preview">Preview</string>
+</resources>

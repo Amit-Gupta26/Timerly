@@ -6,14 +6,14 @@ import java.util.UUID;
  * Created by Kimo on 7/21/15.
  */
 public abstract class BaseModel implements Model {
-    protected String id;
+    protected String modelId;
 
     public BaseModel() {
-        this.id = UUID.randomUUID().toString();
+        this.modelId = UUID.randomUUID().toString();
     }
 
     @Override
     public String getModelId() {
-        return id;
+        return modelId;
     }
 }

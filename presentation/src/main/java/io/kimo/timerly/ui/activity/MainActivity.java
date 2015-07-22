@@ -15,12 +15,14 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import io.kimo.timerly.R;
+import io.kimo.timerly.ui.fragment.HistoryFragment;
 import io.kimo.timerly.ui.fragment.TimerListFragment;
 
 
 public class MainActivity extends AppCompatActivity {
 
     public static final int FRAGMENT_TIMER_LIST = 0;
+    public static final int FRAGMENT_HISTORY = 1;
 
     private Toolbar toolbar;
     private Drawer drawer;
@@ -81,7 +83,13 @@ public class MainActivity extends AppCompatActivity {
                             .withIcon(GoogleMaterial.Icon.gmd_alarm)
                             .withSelectedIconColorRes(R.color.primary)
                             .withSelectedTextColorRes(R.color.primary)
-                            .withIdentifier(FRAGMENT_TIMER_LIST)
+                            .withIdentifier(FRAGMENT_TIMER_LIST),
+                        new PrimaryDrawerItem()
+                            .withName(R.string.title_history_screen)
+                            .withIcon(GoogleMaterial.Icon.gmd_history)
+                            .withSelectedIconColorRes(R.color.primary)
+                            .withSelectedTextColorRes(R.color.primary)
+                            .withIdentifier(FRAGMENT_HISTORY)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -103,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
         switch (flag) {
             case FRAGMENT_TIMER_LIST:
                 replace(TimerListFragment.newInstance());
+                break;
+            case FRAGMENT_HISTORY:
+                replace(HistoryFragment.newInstance());
                 break;
         }
     }

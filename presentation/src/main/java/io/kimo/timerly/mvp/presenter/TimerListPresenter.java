@@ -7,6 +7,7 @@ import java.util.List;
 
 import io.kimo.lib.faker.Faker;
 import io.kimo.timerly.R;
+import io.kimo.timerly.Timerly;
 import io.kimo.timerly.mvp.BasePresenter;
 import io.kimo.timerly.mvp.model.TimerModel;
 import io.kimo.timerly.mvp.view.TimerListView;
@@ -45,8 +46,7 @@ public class TimerListPresenter extends BasePresenter{
         hideAllViews();
         timerListView.showLoading();
 
-        List<TimerModel> fakeTimers = new ArrayList<>();
-//        List<TimerModel> fakeTimers = generateFakeTimers(0);
+        List<TimerModel> fakeTimers = Timerly.LOCAL_DATA.getLocalTimers();
 
         if(fakeTimers.isEmpty()) {
             timerListView.showEmpty(context.getString(R.string.empty_timers_feedback));
@@ -69,7 +69,7 @@ public class TimerListPresenter extends BasePresenter{
         for(int i = 0; i < numberOfTimers; i++) {
             TimerModel timerModel = new TimerModel();
 
-            timerModel.setColor(Faker.with(context).Color.randomColor());
+//            timerModel.setColor(Faker.with(context).Color.randomColor());
             timerModel.setTitle(Faker.with(context).Name.firstName() + " #" + Faker.with(context).Number.positiveDigit());
 
             timers.add(timerModel);

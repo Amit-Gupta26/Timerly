@@ -1,14 +1,31 @@
 <resources>
     <string name="app_name">Timerly</string>
 
-    <string name="action_settings">Settings</string>
-
     <string name="title_timers_screen">My Timers</string>
-    <string name="title_create_timer_screen">Create Timer</string>
+    <string name="title_create_timer_screen">New Timer</string>
+    <string name="title_history_screen">History</string>
 
     <string name="empty_timers_feedback">There are no timers.</string>
 
-    <string name="new_timer_title">Title</string>
-    <string name="new_timer_amount_of_circuits">Laps</string>
-    <string name="new_timer_routine_preview">Preview</string>
+    <string name="title">Title</string>
+    <string name="laps">Laps</string>
+    <string name="intervals">Intervals</string>
+    <string name="interval">Interval</string>
+    <string name="add_an_interval">Add an interval</string>
+    <string name="new_interval">New Interval</string>
+    <string name="halfwarning_alert">Half warning alert?</string>
+    <string name="duration_in_seconds">Duration (in seconds)</string>
+    <string name="add">ADD</string>
+    <string name="cancel">CANCEL</string>
+    <string name="remove">REMOVE</string>
+    <string name="incomplete_interval_data">You must fill the title and duration fields.</string>
+    <string name="create">Create</string>
+    <string name="incomplete_timer_data">You must fill the title and the laps fields.</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
+    <string name="reset">Reset</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+
 </resources>

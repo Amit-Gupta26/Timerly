@@ -21,6 +21,7 @@ import io.kimo.timerly.mvp.presenter.TimerListPresenter;
 import io.kimo.timerly.mvp.view.TimerListView;
 import io.kimo.timerly.ui.BaseFragment;
 import io.kimo.timerly.ui.activity.CreateTimerActivity;
+import io.kimo.timerly.ui.activity.TimerRunnerActivity;
 
 /**
  * Created by Kimo on 7/21/15.
@@ -156,7 +157,6 @@ public class TimerListFragment extends BaseFragment implements TimerListView {
         public void onBindViewHolder(ViewHolder viewHolder, int i) {
             TimerModel timerModel = data.get(i);
 
-            viewHolder.color.setBackgroundColor(timerModel.getColor());
             viewHolder.title.setText(timerModel.getTitle());
         }
 
@@ -165,18 +165,22 @@ public class TimerListFragment extends BaseFragment implements TimerListView {
             return data.size();
         }
 
-        public class ViewHolder extends RecyclerView.ViewHolder {
+        public class ViewHolder extends RecyclerView.ViewHolder implements RecyclerView.OnClickListener{
 
-            private View color;
             private TextView title;
-            private View delete;
 
             public ViewHolder(View itemView) {
                 super(itemView);
-
-                color = itemView.findViewById(R.id.color);
                 title = (TextView) itemView.findViewById(R.id.title);
-                delete = itemView.findViewById(R.id.delete);
+
+                itemView.setOnClickListener(this);
+            }
+
+            @Override
+            public void onClick(View v) {
+                if(getAdapterPosition() != -1) {
+                    TimerRunnerActivity.navigate(getActivity(), data.get(getAdapterPosition()));
+                }
             }
         }
     }
